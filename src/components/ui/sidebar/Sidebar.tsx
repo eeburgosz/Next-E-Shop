@@ -1,7 +1,16 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
-import { BiSearch, BiX } from "react-icons/bi";
+import {
+	BiListCheck,
+	BiLogIn,
+	BiLogOut,
+	BiSearch,
+	BiUser,
+	BiX,
+} from "react-icons/bi";
+import { IoPeopleOutline, IoShirtOutline } from "react-icons/io5";
 
 export const Sidebar = () => {
 	return (
@@ -29,6 +38,59 @@ export const Sidebar = () => {
 						className="w-full bg-gray-50 rounded pl-10 py-1 pr-10 border-b-2 text-xl border-gray-200 focus:outline-none focus:border-blue-500"
 					/>
 				</div>
+
+				{/* Menú */}
+				<Link
+					href={"/"}
+					className="flex items-center mt-10 p-2 hover:bg-gray-100 rounded transition-all"
+				>
+					<BiUser size={30} />
+					<span className="ml-3 text-xl">Perfil</span>
+				</Link>
+				<Link
+					href={"/"}
+					className="flex items-center mt-10 p-2 hover:bg-gray-100 rounded transition-all"
+				>
+					<BiListCheck size={30} />
+					<span className="ml-3 text-xl">Órdenes</span>
+				</Link>
+				<Link
+					href={"/"}
+					className="flex items-center mt-10 p-2 hover:bg-gray-100 rounded transition-all"
+				>
+					<BiLogIn size={30} />
+					<span className="ml-3 text-xl">Ingresar</span>
+				</Link>
+				<Link
+					href={"/"}
+					className="flex items-center mt-10 p-2 hover:bg-gray-100 rounded transition-all"
+				>
+					<BiLogOut size={30} />
+					<span className="ml-3 text-xl">Salir</span>
+				</Link>
+				{/* Separator */}
+				<div className="w-full h-px bg-gray-200 my-10" />
+				<Link
+					href={"/"}
+					className="flex items-center mt-10 p-2 hover:bg-gray-100 rounded transition-all"
+				>
+					<IoShirtOutline size={30} />
+					<span className="ml-3 text-xl">Productos</span>
+				</Link>
+				<Link
+					href={"/"}
+					className="flex items-center mt-10 p-2 hover:bg-gray-100 rounded transition-all"
+				>
+					<BiListCheck size={30} />
+					<span className="ml-3 text-xl">Órdenes</span>
+				</Link>
+				<Link
+					href={"/"}
+					className="flex items-center mt-10 p-2 hover:bg-gray-100 rounded transition-all"
+				>
+					<IoPeopleOutline size={30} />
+					<span className="ml-3 text-xl">Usuarios</span>
+				</Link>
 			</nav>
 		</div>
 	);
