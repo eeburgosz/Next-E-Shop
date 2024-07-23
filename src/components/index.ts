@@ -1,3 +1,5 @@
+export { ProductGridItem } from "./products/products-grid/ProductGridItem";
+
 export { ProductsGrid } from "./products/products-grid/ProductsGrid";
 
 export { Title } from "./ui/title/Title";
