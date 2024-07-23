@@ -1,18 +1,24 @@
+"use client";
+
 import { titleFont } from "@/config/fonts";
+import { useUIStore } from "@/store";
 import Link from "next/link";
 import { BiCart, BiSearch } from "react-icons/bi";
-import { IoSearch } from "react-icons/io5";
 
 export const TopMenu = () => {
+	const openSideMenu = useUIStore((state) => state.openSideMenu);
+
 	return (
 		<nav className="flex px-5 justify-between items-center w-full">
 			{/* Logo */}
 			<div>
 				<Link href={"/"}>
-					<span className={`${titleFont.className} antialiased font-bold`}>
+					<span
+						className={`${titleFont.className} antialiased font-bold text-3xl`}
+					>
 						E
 					</span>
-					<span> - Shop</span>
+					<span className="text-3xl"> - Shop</span>
 				</Link>
 			</div>
 			{/* Center Menu */}
@@ -49,7 +55,10 @@ export const TopMenu = () => {
 						<BiCart className="w-5 h-5" />
 					</div>
 				</Link>
-				<button className="m-2 p-2 rounded-md transition-all hover:bg-gray-100">
+				<button
+					onClick={() => openSideMenu()}
+					className="m-2 p-2 rounded-md transition-all hover:bg-gray-100"
+				>
 					Menú
 				</button>
 			</div>
