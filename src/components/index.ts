@@ -1,3 +1,5 @@
+export { Sidebar } from "./ui/sidebar/Sidebar";
+
 export { ProductGridItem } from "./products/products-grid/ProductGridItem";
 
 export { ProductsGrid } from "./products/products-grid/ProductsGrid";
