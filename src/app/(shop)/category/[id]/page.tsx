@@ -1,7 +1,7 @@
-export default function CheckoutPage() {
+export default function CategorytPage() {
 	return (
 		<div>
-			<h1>Checkout Page</h1>
+			<h1>Category Page</h1>
 		</div>
 	);
 }
