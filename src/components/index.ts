@@ -1,3 +1,5 @@
+export { ProductsGrid } from "./products/products-grid/ProductsGrid";
+
 export { Title } from "./ui/title/Title";
 
 export { PageNotFound } from "./ui/not-found/PageNotFound";
