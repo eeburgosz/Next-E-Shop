@@ -1,3 +1,5 @@
+export { Footer } from "./ui/footer/Footer";
+
 export { ProductMobileSlideshow } from "./product/slideshow/ProductMobileSlideshow";
 
 export { ProductSlideshow } from "./product/slideshow/ProductSlideshow";
