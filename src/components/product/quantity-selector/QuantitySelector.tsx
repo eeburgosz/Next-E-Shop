@@ -21,7 +21,7 @@ export const QuantitySelector = ({ quantity }: Props) => {
 			<button onClick={() => onQuantityChange(-1)}>
 				<IoRemoveCircleOutline size={30} />
 			</button>
-			<span className="w-20 mx-3 px-5 bg-gray-200 text-center rounded align-middle">
+			<span className="flex items-center justify-center w-20 mx-3 px-5 bg-gray-200 text-center rounded ">
 				{count}
 			</span>
 			<button onClick={() => onQuantityChange(1)}>

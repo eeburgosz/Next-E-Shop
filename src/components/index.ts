@@ -1,3 +1,5 @@
+export { ProductSlideshow } from "./product/slideshow/ProductSlideshow";
+
 export { QuantitySelector } from "./product/quantity-selector/QuantitySelector";
 
 export { SizeSelector } from "./product/size-selector/SizeSelector";
