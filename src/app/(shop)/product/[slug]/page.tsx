@@ -1,4 +1,9 @@
-import { ProductSlideshow, QuantitySelector, SizeSelector } from "@/components";
+import {
+	ProductMobileSlideshow,
+	ProductSlideshow,
+	QuantitySelector,
+	SizeSelector,
+} from "@/components";
 import { titleFont } from "@/config/fonts";
 import { initialData } from "@/seed/seed";
 import { notFound } from "next/navigation";
@@ -16,10 +21,23 @@ export default function ProductPage({ params }: Props) {
 
 	return (
 		<div className="mt-5 mb-20 grid grid-cols-1 sm:grid-cols-3 gap-3">
-			{/* Slideshow */}
+			{/* Mobile Slideshow */}
 			<div className="col-span-1 sm:col-span-2">
-				<ProductSlideshow title={product.title} images={product.images} />
+				<ProductMobileSlideshow
+					className="block md:hidden"
+					title={product.title}
+					images={product.images}
+				/>
 			</div>
+			{/* Desktop Slideshow */}
+			<div className="col-span-1 sm:col-span-2">
+				<ProductSlideshow
+					className="hidden md:block"
+					title={product.title}
+					images={product.images}
+				/>
+			</div>
+
 			{/* Detalles */}
 			<div className="col-span-1 px-5">
 				<h1 className={`${titleFont.className} antialiased font-bold text-xl`}>

@@ -1,3 +1,5 @@
+export { ProductMobileSlideshow } from "./product/slideshow/ProductMobileSlideshow";
+
 export { ProductSlideshow } from "./product/slideshow/ProductSlideshow";
 
 export { QuantitySelector } from "./product/quantity-selector/QuantitySelector";
