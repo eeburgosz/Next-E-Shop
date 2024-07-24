@@ -1,3 +1,7 @@
+export { QuantitySelector } from "./product/quantity-selector/QuantitySelector";
+
+export { SizeSelector } from "./product/size-selector/SizeSelector";
+
 export { Sidebar } from "./ui/sidebar/Sidebar";
 
 export { ProductGridItem } from "./products/products-grid/ProductGridItem";
