@@ -2,14 +2,22 @@ import { initialData } from "./seed";
 import prisma from "../lib/prisma";
 
 async function main() {
-	// console.log(initialData);
-	//! Primero borramos lo que está en la DB.
+	//! 1. Primero borramos lo que está en la DB.
 	await Promise.all([
 		prisma.productImage.deleteMany(),
 		prisma.product.deleteMany(),
 		prisma.category.deleteMany(),
 	]);
-	console.log("Seed ejecutado correctamente");
+
+	//Categorías
+	const { categories, products } = initialData;
+	const categoriesData = categories.map((category) => ({
+		name: category,
+	}));
+
+	await prisma.category.createMany({
+		data: categoriesData,
+	});
 }
 
 (() => {
