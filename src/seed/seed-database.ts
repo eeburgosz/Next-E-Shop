@@ -18,6 +18,14 @@ async function main() {
 	await prisma.category.createMany({
 		data: categoriesData,
 	});
+
+	const categoriesDB = await prisma.category.findMany({});
+	const categoriesMap = categoriesDB.reduce((map, category) => {
+		map[category.name.toLowerCase()] = category.id;
+		return map;
+	}, {} as Record<string, string>); // <string = shirt, string = uuid de shirt>
+
+	console.log(categoriesMap);
 }
 
 (() => {
