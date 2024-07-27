@@ -3,11 +3,11 @@ import prisma from "../lib/prisma";
 
 async function main() {
 	//! 1. Primero borramos lo que está en la DB.
-	await Promise.all([
-		prisma.productImage.deleteMany(),
-		prisma.product.deleteMany(),
-		prisma.category.deleteMany(),
-	]);
+	// await Promise.all([
+	await prisma.productImage.deleteMany();
+	await prisma.product.deleteMany();
+	await prisma.category.deleteMany();
+	// ]);
 
 	//Categorías
 	const { categories, products } = initialData;
@@ -41,10 +41,17 @@ async function main() {
 				categoryId: categoriesMap[type],
 			},
 		});
-		// Images
+		// Imágenes
+		const imagesData = images.map((image) => ({
+			url: image,
+			productId: dbProduct.id,
+		}));
+		await prisma.productImage.createMany({
+			data: imagesData,
+		});
 	});
 
-	// console.log(dbProduct);
+	console.log("Seed creado correctamente");
 }
 
 (() => {
