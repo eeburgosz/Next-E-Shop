@@ -34,7 +34,7 @@ model Category {
 model Product {
   id          String   @id @default(uuid())
   title       String
-  description String? //! El ? es para permitir null
+  description String //! Si pongo  String? es para permitir null
   inStock     Int
   price       Float    @default(0)
   sizes       Size[]   @default([])
