@@ -50,6 +50,7 @@ export const getPaginatedProductsWithImages = async ({
 			totalPages: totalPages,
 			products: products.map((product) => ({
 				...product,
+				description: product.description || "", //! Esto lo tuve qué hacer porque me daba un warning en /gender/[gender]
 				images: product.ProductImage.map((image) => image.url),
 			})),
 		};
