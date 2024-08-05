@@ -1,3 +1,5 @@
+export const revalidate = 60; //! Revalida cada 60 segudnos
+
 import { getPaginatedProductsWithImages } from "@/actions";
 import { Pagination, ProductsGrid, Title } from "@/components";
 import { redirect } from "next/navigation";
