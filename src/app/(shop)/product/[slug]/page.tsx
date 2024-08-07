@@ -6,6 +6,7 @@ import {
 	ProductSlideshow,
 	QuantitySelector,
 	SizeSelector,
+	StockLabel,
 } from "@/components";
 import { titleFont } from "@/config/fonts";
 // import { initialData } from "@/seed/seed";
@@ -46,6 +47,7 @@ export default async function ProductPage({ params }: Props) {
 
 			{/* Detalles */}
 			<div className="col-span-1 px-5">
+				<StockLabel slug={product.slug} />
 				<h1 className={`${titleFont.className} antialiased font-bold text-xl`}>
 					{product.title}
 				</h1>
