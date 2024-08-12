@@ -1,8 +1,12 @@
+"use client";
+
 import { Title } from "@/components";
 import Image from "next/image";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { ProductsInCart } from "./ui/ProductsInCart";
+import { useCartStore } from "@/store";
+import { OrderSummary } from "./ui/OrderSummary";
 
 export default function CartPage() {
 	// productsInCart.length === 0 && redirect("/empty");
@@ -25,19 +29,7 @@ export default function CartPage() {
 					{/* Checkout - Resumen de orden */}
 					<div className="bg-white rounded-xl shadow-xl p-7 h-fit">
 						<h2 className="text-2xl mb-2">Resumen de orden</h2>
-						<div className="grid grid-cols-2">
-							<span>No. de productos</span>
-							<span className="text-right">{3} artículos</span>
-
-							<span>Subtotal</span>
-							<span className="text-right">$100</span>
-
-							<span>Impuestos (15%)</span>
-							<span className="text-right">$15</span>
-
-							<span className="text-2xl mt-5">Total:</span>
-							<span className="text-right text-2xl mt-5">$115</span>
-						</div>
+						<OrderSummary />
 						<div className="mt-5 mb-2 w-full">
 							<Link
 								href={"/checkout/address"}
