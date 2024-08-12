@@ -6,7 +6,7 @@ interface State {
 	cart: CartProduct[];
 
 	// Métodos
-
+	getTotalItems: () => number;
 	addProductToCart: (product: CartProduct) => void;
 	// updateProductQuantity
 	// removeProduct
@@ -20,6 +20,12 @@ export const useCartStore = create<State>()(
 			cart: [],
 
 			// Métodos
+
+			getTotalItems: () => {
+				const { cart } = get();
+				return cart.reduce((total, item) => total + item.quantity, 0);
+			},
+
 			addProductToCart: (product: CartProduct) => {
 				const { cart } = get();
 				// 1. Revisar si el producto existe en el carrito con la talla seleccionada.
